@@ -1,0 +1,16 @@
+<div width="30%" class="cols">
+    <input style="display: none" type="file" #fileInput multiple="multiple"
+        (change)="onSelected($event.target.files)" />
+    <button mat-raised-button  (click)="showFileDialog()">Click here to Upload File</button>
+</div>
+<div min-width="70%" class="cols" *ngIf="blobState?.uploadedItems$">
+    <section *ngFor="let upload of blobState.uploadedItems$ | async">
+        <div  class="upload-item">
+            <p> {{upload.filename}}</p>
+            <mat-progress-bar mode="determinate" 
+            [value]="upload.progress"> {{upload.filename}}</mat-progress-bar>
+        </div>
+    </section>
+</div>
+
+<!-- *ngIf="upload.progress != 100" -->

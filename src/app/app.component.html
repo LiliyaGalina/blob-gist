@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<mat-tab-group (selectedTabChange)="onTabChanged($event)" *ngIf="containers$">
+    <mat-tab *ngFor="let container of containers$ | async" [label]="container.name">
+        <ng-template mat-tab-label>
+            {{container.name}}
+        </ng-template>
+        <app-filescreen [container]="container"></app-filescreen>
+    </mat-tab>
+</mat-tab-group>

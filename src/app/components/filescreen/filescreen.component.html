@@ -1,0 +1,12 @@
+<div class="content-overlay">
+
+    <app-input-file [blobState]="blobState"></app-input-file>
+
+    <ngx-masonry #masonry [options]="{ gutter: 20 }" *ngIf="items">
+        <div ngxMasonryItem class="masonry-item" *ngFor="let image of items" 
+        (click)="showInfo(image)">
+            <img [src]="getImageUrl(image.name)" width="100%" />
+        </div>
+    </ngx-masonry>
+
+</div>

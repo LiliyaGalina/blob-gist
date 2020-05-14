@@ -1,0 +1,29 @@
+<div *ngIf="itemData">
+
+    <h4>Name:
+        <button  (click)="copyIntoBuffer(itemData.name)"
+        mat-icon-button color="primary" title="Copy into buffer">
+            <mat-icon>file_copy</mat-icon>
+        </button>
+    </h4>
+    <p>{{itemData.name}}</p>
+    <h4>Url:
+        <button (click)="copyIntoBuffer(itemData.url)"
+        mat-icon-button color="primary" title="Copy into buffer"> 
+            <mat-icon>file_copy</mat-icon>
+        </button>
+    </h4>
+    <p>{{itemData.url}}</p>
+
+    <mat-accordion *ngIf="itemData.properties">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Properties
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <pre>{{itemData.properties | json}}</pre>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+</div>

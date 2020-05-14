@@ -1,0 +1,13 @@
+.masonry-item {
+    width: 30%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+ngx-masonry {
+    overflow: auto;
+}
+
+.content-overlay{
+    padding:20px;
+}

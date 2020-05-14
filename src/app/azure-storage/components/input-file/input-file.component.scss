@@ -1,0 +1,17 @@
+.upload-item {
+    display: block;
+    width: 100%;
+}
+
+.cols {
+    padding: 20px;
+    display: inline-block;
+
+    section {
+        width: 100%;
+
+        .upload-item {
+            width: 100%;
+        }
+    }
+}
